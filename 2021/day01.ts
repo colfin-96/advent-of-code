@@ -7,6 +7,7 @@ let testInput: number[] = fl.load(`${__dirname}/input.txt`);
 let increasements = 0;
 let lastNumber: number;
 
+// Result 1
 testInput.forEach((currentNumber, index) => {
   if (index === 0) {
     lastNumber = currentNumber;
@@ -19,4 +20,14 @@ testInput.forEach((currentNumber, index) => {
   lastNumber = currentNumber;
 });
 
-console.log(increasements);
+console.log('Result 1: ' + increasements);
+
+// Result 2
+increasements = 0;
+for (let i = 0; i < testInput.length - 2; i++) {
+  let sum1 = testInput[i] + testInput[i + 1] + testInput[i + 2];
+  let sum2 = testInput[i + 1] + testInput[i + 2] + testInput[i + 3];
+
+  if (sum2 > sum1) increasements++;
+}
+console.log('Result 2: ' + increasements);
