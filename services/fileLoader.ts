@@ -7,11 +7,7 @@ export class FileLoader {
   constructor() {}
 
   load(path: string): any {
-    let contents = readFileSync(path, 'utf8')
-      .split('\n')
-      .map((x) => {
-        return parseInt(x, 10);
-      });
+    let contents = readFileSync(path, 'utf8').split('\n');
 
     return contents;
   }
